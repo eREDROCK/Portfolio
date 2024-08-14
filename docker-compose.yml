@@ -1,0 +1,14 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    # 環境変数を定義する
+    environment:
+      - WATCHPACK_POLLING=true
+    working_dir: '/usr/src/app'
+    volumes:
+      - ./frontend:/usr/src/app
+    command: sh -c "yarn build && yarn dev"
+    ports:
+      - 3000:3000
+    tty: true
