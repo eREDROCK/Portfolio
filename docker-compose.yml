@@ -2,7 +2,6 @@ version: '3'
 services:
   frontend:
     build: ./frontend
-    # 環境変数を定義する
     environment:
       - WATCHPACK_POLLING=true
     working_dir: '/usr/src/app'
